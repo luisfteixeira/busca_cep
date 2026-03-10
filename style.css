@@ -1,0 +1,169 @@
+﻿:root {
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --muted: #64748b;
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+  --border: #dbe2ea;
+  --error: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 360px;
+  padding: 12px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #eef6f7 0%, var(--bg) 100%);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.collapsible summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 11px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsible summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible summary::after {
+  content: '+';
+  color: var(--primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.collapsible[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.collapsible[open] summary::after {
+  content: '-';
+}
+
+.card-content {
+  padding: 10px;
+}
+
+input,
+button {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 8px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+input:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.2);
+  border-color: var(--primary);
+}
+
+button {
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+button.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+button.secondary:hover {
+  background: #cfd8e3;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.checkbox-container input {
+  margin: 2px 0 0;
+  width: auto;
+}
+
+#resultado {
+  min-height: 40px;
+  max-height: 270px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.result-count {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.resultado-item {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.resultado-item div {
+  margin-bottom: 4px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 10px 0;
+}
+
+.status-msg,
+.loading-msg {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.erro-msg {
+  color: var(--error);
+  font-weight: 600;
+  font-size: 13px;
+}

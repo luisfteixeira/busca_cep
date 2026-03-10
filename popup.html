@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca CEP</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Busca CEP</h1>
+
+  <details class="card collapsible">
+    <summary>Buscar por CEP</summary>
+    <div class="card-content">
+      <input type="text" id="inputCep" placeholder="Digite o CEP (8 numeros)" maxlength="8" inputmode="numeric" autocomplete="off">
+      <button id="btnBuscarCep">Buscar CEP</button>
+    </div>
+  </details>
+
+  <details class="card collapsible">
+    <summary>Buscar por Endereco</summary>
+    <div class="card-content">
+      <input type="text" id="inputEstado" placeholder="UF (ex.: SP)" maxlength="2" autocomplete="address-level1">
+      <input type="text" id="inputCidade" placeholder="Cidade (nome completo)" autocomplete="address-level2">
+      <input type="text" id="inputLogradouro" placeholder="Logradouro">
+
+      <label class="checkbox-container" for="checkExato">
+        <input type="checkbox" id="checkExato">
+        <span>Buscar exatamente como digitado</span>
+      </label>
+
+      <label class="checkbox-container" for="checkSalvarLocal">
+        <input type="checkbox" id="checkSalvarLocal">
+        <span>Salvar UF e cidade para proximas buscas</span>
+      </label>
+
+      <button id="btnBuscarEndereco">Buscar Endereco</button>
+      <button id="btnLimparLocal" class="secondary">Limpar UF e cidade salvas</button>
+      <div id="statusLocal" class="status-msg" aria-live="polite"></div>
+    </div>
+  </details>
+
+  <div id="resultado" aria-live="polite"></div>
+
+  <button id="btnLimpar" class="secondary">Limpar resultado</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
